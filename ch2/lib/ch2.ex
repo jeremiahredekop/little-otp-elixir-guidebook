@@ -12,4 +12,23 @@ defmodule Ch2 do
     total
   end
 
+
+
+  def reverseAndSquare(list) do
+    toreturn = List.flatten(list)
+    toreturn = Enum.reverse(toreturn)
+    toreturn = Enum.map(toreturn, &(&1 * &1))
+    toreturn
+  end
+
+  def reverseAndSquareV2(list) do
+    list
+    |> List.flatten
+    |> Enum.reverse
+    |> Enum.map &(&1 * &1)
+  end
+
+  def hashIt(input) do
+    :crypto.md5(input) |> Base.encode32
+  end
 end
